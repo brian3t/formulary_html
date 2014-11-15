@@ -1,8 +1,8 @@
-## Employee Directory ##
+## Drug Directory ##
 
 ### Sample Application built with Backbone.js and Ratchet 2.0 ###
 
-"Backbone Directory" is a simple Employee Directory application built with [Backbone.js](http://backbonejs.org) and [Ratchet] (https://github.com/twbs/ratchet).
+"Backbone Directory" is a simple Drug Directory application built with [Backbone.js](http://backbonejs.org) and [Ratchet] (https://github.com/twbs/ratchet).
 
 Refer to [this blog post](http://coenraets.org) for more information about the application.
 
