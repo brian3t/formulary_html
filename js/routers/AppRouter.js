@@ -1,9 +1,9 @@
 app.routers.AppRouter = Backbone.Router.extend({
 
     routes: {
-        "":                         "home",
-        "drugs/:id":            "drugDetails",
-        "drugs/:id/state":        "selectState"
+        "": "home",
+        "drugs/:id": "drugDetails",
+        "formulary/:f_id/:drug_id/:state": "formularyDetails"
     },
 
     initialize: function () {
@@ -31,18 +31,18 @@ app.routers.AppRouter = Backbone.Router.extend({
                 app.slider.slidePage(new app.views.DrugView({model: data}).render().$el);
             }
         });
-    }
+    },
 
-    //reports: function (id) {
-    //    var employee = new app.models.Drug({id: id});
-    //    employee.fetch({
-    //        success: function (data) {
-    //            // Note that we could also 'recycle' the same instance of EmployeeFullView
-    //            // instead of creating new instances
-    //            app.slider.slidePage(new app.views.ReportsView({model: data}).render().$el);
-    //        }
-    //    });
-    //},
+    formularyDetails: function (f_id, drug_id, state) {
+        var formulary = new app.models.Formulary({f_id: f_id, drug_id: drug_id, state: state});
+        formulary.fetch({
+            success: function (returnedData) {
+                // Note that we could also 'recycle' the same instance of DrugFullView
+                // instead of creating new instances
+                app.slider.slidePage(new app.views.FormularyView({model: returnedData}).render().$el);
+            }
+        });
+    }
 
     //map: function (id) {
     //    app.slider.slidePage(new app.views.MapView().render().$el);

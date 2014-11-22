@@ -1,18 +1,14 @@
-app.views.DrugView = Backbone.View.extend({
+app.views.PlanView = Backbone.View.extend({
+
     initialize: function () {
         this.searchResults = new app.models.PlanCollection();
         this.searchresultsView = new app.views.PlanListView({model: this.searchResults});
-        $.each($('#plan-list>ul>li>a'), function(i, v){
-            $(v).click(function(){
-
-            });
-        });
     },
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         $('#plan-list', this.el).append(this.searchresultsView.render().el);
-        return this;
+       return this;
     },
 
     events: {
@@ -27,12 +23,8 @@ app.views.DrugView = Backbone.View.extend({
     },
     search: function (event) {
         var key = $('.search-key').val();
-        var stateEle = $('#state');
-        var stateVal = "CA";
-        if (stateEle.length !== 0) {
-            stateVal = stateEle.val();
-        };
-        this.searchResults.fetch({reset: true, data: {name: key, state: stateVal}});
+        var drugName = ($('#drug-name>div').length !== 0?$('#drug-name>div').text():"");
+        this.searchResults.fetch({reset: true, data: {name: key, state: state, drugName: drugName}});
     },
 
     onkeypress: function (event) {
