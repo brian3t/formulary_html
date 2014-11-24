@@ -2,3 +2,5 @@
 
 .idea
 .idea/**
+ratchet/.sass-cache
+css/compass/.sass-cache
