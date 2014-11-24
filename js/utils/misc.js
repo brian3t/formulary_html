@@ -69,6 +69,11 @@ app.utils.misc = (function () {
                     $('#' + $(this).data('target')).addClass("active");
                 });
             });
+                $('div.modal>header>a').each(function () {
+                        $(this).click(function(){
+                                $(this).parent().parent('div.modal').removeClass("active");
+                        });
+                });
 
         };
     return {

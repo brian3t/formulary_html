@@ -1,0 +1,121 @@
+@import "compass";
+
+body{
+  font-family: "Quicksand", sans-serif;
+  font-size: 19px;
+  background-color: inherit;
+}
+button, input, select, textarea {
+  font-family: "Quicksand", sans-serif;
+}
+.content{
+  // needs latest Compass, add '@import "compass"' to your scss
+  background-color: rgb(62,119,185); // Old browsers
+  @include filter-gradient(#3e77b9, #9dd9f8, horizontal); // IE6-9 fallback on horizontal gradient
+  @include background-image(linear-gradient(left top,  rgba(62,119,185,1) 0%,rgba(73,169,248,1) 10%,rgba(64,156,234,1) 20%,rgba(157,217,248,1) 70%));
+  padding: 54px !important;
+}
+ul {
+  clear: both
+}
+.title{
+  font-weight: 600;
+}
+
+.content {
+  position: absolute;
+}
+select{
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+}
+.w90{width:90%}
+.bar-header-secondary > input {
+  margin-top: 6px;
+  height: 31px;
+}
+
+.details {
+  margin: auto;
+  > img {
+    float: left;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+  }
+  h1 {
+    padding-top: 16px;
+    font-size: 18px;
+  }
+}
+
+.home .table-view {
+  margin: 0 !important;
+  border: none;
+}
+
+.media-object {
+  width: 42px;
+  height: 42px;
+}
+
+.icon-call {
+  background: transparent url(../../images/ic_action_phone_outgoing.png);
+  background-repeat: no-repeat;
+}
+
+.icon-sms {
+  background: transparent url(../../images/ic_action_dialog.png);
+  background-repeat: no-repeat;
+}
+
+.icon-mail {
+  background: transparent url(../../images/ic_action_mail.png);
+  background-repeat: no-repeat;
+}
+
+.icon-manager {
+  background: transparent url(../../images/ic_action_user.png);
+  background-repeat: no-repeat;
+}
+
+.icon-reports {
+  background: transparent url(../../images/ic_action_users.png);
+  background-repeat: no-repeat;
+}
+
+.icon-contact {
+  background: transparent url(../../images/ic_action_add.png);
+  background-repeat: no-repeat;
+}
+
+.icon-location {
+  background: transparent url(../../images/ic_action_location.png);
+  background-repeat: no-repeat;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padding-row {
+  width: 100%;
+  height: 15px;
+}
+
+.inset {
+  padding: 3px 3%;
+}
+
+.bar {
+  border-bottom: none;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+header.bar {
+  background: url("../../../img/top.png")  center no-repeat;
+  background-size: 100% 100%;
+}
