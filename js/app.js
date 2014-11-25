@@ -6,7 +6,7 @@ var app = {
     adapters: {}
 };
 var config = {
-    restUrl : "http://localhost/f/"
+    restUrl : "http://10.0.0.185/f/"
     //restUrlLive : "http://usvsolutions.com/formulary_api/f/"
     //restUrl :"http://usvsolutions.com/formulary_api/f/"
     //TODO auto switch rest url based on deployment

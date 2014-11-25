@@ -8,8 +8,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'js/adapters/memory-adapter.js',
-        dest: 'build/js/adapters/memory-adapter.min.js'
+        files:[{src: 'js/adapters/memory-adapter.js',dest: 'build/js/adapters/memory-adapter.min.js'},
+          {src: 'lib/fastclick.js',dest: 'build/lib/fastclick.min.js'}]
       }
     }
   });
