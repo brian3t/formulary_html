@@ -84,9 +84,9 @@
     <div class="details" id="drug-name">
         <h4><%= drug_name %></h4>
 
-        <div>Tier: <%= tier_code %></div>
         <div><a target="_blank" href="<%= plan_url %>"><%= plan_name %></a></div>
         <div class="cap"><%= state_name %></div>
+        <div>Tier: <%= tier_code %></div>
         <% if (restriction_code == "") { restriction_code = "None"; } %>
         <div>Restriction: <%= restriction_code %>
             <span data-target="restrictionModal" class="icon icon-info modal-js"></span>
