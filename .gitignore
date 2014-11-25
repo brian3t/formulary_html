@@ -9,3 +9,4 @@ css/compass/.sass-cache/**
 js/app.js
 css/.sass-cache
 css/.sass-cache/**
+node_modules
