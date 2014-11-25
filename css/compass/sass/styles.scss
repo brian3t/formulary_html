@@ -1,5 +1,5 @@
 @import "compass";
-
+html{width: 100%;}
 body{
   font-family: "Quicksand", sans-serif;
   font-size: 19px;
@@ -17,11 +17,17 @@ button, input, select, textarea {
 
 
 }
+.more-actions * {
+  margin-top: 10px;
+}
 .bar-nav~.content{
   padding: 54px 10px 10px 10px;
 }
 a{
   color:#003ED0
+}
+.fb-wrapper {
+  margin-top: -10px;margin-bottom: 24px;
 }
 div.details >div {
   padding: 5px 0px;
@@ -32,7 +38,14 @@ ul {
 .title{
   font-weight: 600;
 }
-
+#loading{
+  background: url("../../../img/spinner-blue.gif") no-repeat 50%;
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  top: 150px;
+  background-size: 50px;
+}
 .content {
 //  position: absolute;
 }

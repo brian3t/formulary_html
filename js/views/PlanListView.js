@@ -1,5 +1,6 @@
 app.views.PlanListView = Backbone.View.extend({
     tagName:'ul',
+    drug_id:33,
     className:'table-view',
     initialize:function () {
         var self = this;
@@ -32,10 +33,14 @@ app.views.PlanListItemView = Backbone.View.extend({
     },
 
     render:function () {
-        this.model.attributes["drug_id"] = 1838;
+        this.model.attributes["drug_id"] = app.views.PlanListItemView.drug_id;
         this.$el.html(this.template(this.model.attributes));
         this.appendParamsToLi();
         return this;
     }
 
-});
+},
+    {
+        drug_id:"initial"
+    }
+);

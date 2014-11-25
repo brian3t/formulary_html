@@ -1,3 +1,8 @@
+/* line 2, ../sass/styles.scss */
+html {
+  width: 100%;
+}
+
 /* line 3, ../sass/styles.scss */
 body {
   font-family: "Quicksand", sans-serif;
@@ -26,151 +31,172 @@ button, input, select, textarea {
 }
 
 /* line 20, ../sass/styles.scss */
+.more-actions * {
+  margin-top: 10px;
+}
+
+/* line 23, ../sass/styles.scss */
 .bar-nav ~ .content {
   padding: 54px 10px 10px 10px;
 }
 
-/* line 23, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 a {
   color: #003ED0;
 }
 
-/* line 26, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
+.fb-wrapper {
+  margin-top: -10px;
+  margin-bottom: 24px;
+}
+
+/* line 32, ../sass/styles.scss */
 div.details > div {
   padding: 5px 0px;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 35, ../sass/styles.scss */
 ul {
   clear: both;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 .title {
   font-weight: 600;
 }
 
-/* line 39, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
+#loading {
+  background: url("../../../img/spinner-blue.gif") no-repeat 50%;
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  top: 150px;
+  background-size: 50px;
+}
+
+/* line 52, ../sass/styles.scss */
 select {
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
 }
 
-/* line 43, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 .w90 {
   width: 90%;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .bar-header-secondary > input {
   margin-top: 6px;
   height: 31px;
 }
 
-/* line 49, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 .details {
   margin: auto;
 }
-/* line 51, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 .details > img {
   float: left;
   margin: 10px;
   width: 80px;
   height: 80px;
 }
-/* line 57, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 .details h1 {
   padding-top: 16px;
   font-size: 18px;
 }
 
-/* line 63, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
 .home .table-view {
   margin: 0 !important;
   border: none;
 }
 
-/* line 68, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
 .media-object {
   width: 42px;
   height: 42px;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 86, ../sass/styles.scss */
 .icon-call {
   background: transparent url(../../images/ic_action_phone_outgoing.png);
   background-repeat: no-repeat;
 }
 
-/* line 78, ../sass/styles.scss */
+/* line 91, ../sass/styles.scss */
 .icon-sms {
   background: transparent url(../../images/ic_action_dialog.png);
   background-repeat: no-repeat;
 }
 
-/* line 83, ../sass/styles.scss */
+/* line 96, ../sass/styles.scss */
 .icon-mail {
   background: transparent url(../../images/ic_action_mail.png);
   background-repeat: no-repeat;
 }
 
-/* line 88, ../sass/styles.scss */
+/* line 101, ../sass/styles.scss */
 .icon-manager {
   background: transparent url(../../images/ic_action_user.png);
   background-repeat: no-repeat;
 }
 
-/* line 93, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 .icon-reports {
   background: transparent url(../../images/ic_action_users.png);
   background-repeat: no-repeat;
 }
 
-/* line 98, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 .icon-contact {
   background: transparent url(../../images/ic_action_add.png);
   background-repeat: no-repeat;
 }
 
-/* line 103, ../sass/styles.scss */
+/* line 116, ../sass/styles.scss */
 .icon-location {
   background: transparent url(../../images/ic_action_location.png);
   background-repeat: no-repeat;
 }
 
-/* line 108, ../sass/styles.scss */
+/* line 121, ../sass/styles.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 112, ../sass/styles.scss */
+/* line 125, ../sass/styles.scss */
 .padding-row {
   width: 100%;
   height: 15px;
 }
 
-/* line 117, ../sass/styles.scss */
+/* line 130, ../sass/styles.scss */
 .inset {
   padding: 3px 3%;
 }
 
-/* line 121, ../sass/styles.scss */
+/* line 134, ../sass/styles.scss */
 .bar {
   border-bottom: none;
 }
 
-/* line 125, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 .cap {
   text-transform: capitalize;
 }
 
-/* line 129, ../sass/styles.scss */
+/* line 142, ../sass/styles.scss */
 header.bar {
   background: url("../../../img/top.png") center no-repeat;
   background-size: 100% 100%;
 }
 
-/* line 133, ../sass/styles.scss */
+/* line 146, ../sass/styles.scss */
 ul:empty {
   display: none;
 }

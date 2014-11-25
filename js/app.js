@@ -6,9 +6,9 @@ var app = {
     adapters: {}
 };
 var config = {
-    //restUrl : "http://localhost/f/"
+    restUrl : "http://localhost/f/"
     //restUrlLive : "http://usvsolutions.com/formulary_api/f/"
-    restUrl :"http://usvsolutions.com/formulary_api/f/"
+    //restUrl :"http://usvsolutions.com/formulary_api/f/"
     //TODO auto switch rest url based on deployment
 }
 
@@ -20,4 +20,10 @@ $(document).on("ready", function () {
             Backbone.history.start();
         });
     $.ajaxSetup({ cache: true });
+    $( document ).ajaxStart(function() {
+        $( "#loading" ).show();
+    });
+    $( document ).ajaxStop(function() {
+        $( "#loading" ).hide();
+    });
 });

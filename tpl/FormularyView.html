@@ -5,10 +5,34 @@
     </a>
 
     <h1 class="title">Formulary Details</h1>
+    <script>
+        (function(doc, script) {
+            var js,
+                    fjs = doc.getElementsByTagName(script)[0],
+                    frag = doc.createDocumentFragment(),
+                    add = function(url, id) {
+                        if (doc.getElementById(id)) {return;}
+                        js = doc.createElement(script);
+                        js.src = url;
+                        id && (js.id = id);
+                        frag.appendChild( js );
+                    };
+
+            // Twitter SDK
+            add('//platform.twitter.com/widgets.js');
+            // Google+ button
+            add('http://apis.google.com/js/plusone.js');
+            // Facebook SDK
+            add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
+
+            fjs.parentNode.insertBefore(frag, fjs);
+        }(document, 'script'));
+    </script>
 </header>
 <div id="restrictionModal" class="modal">
     <header class="bar bar-nav">
         <a class="icon icon-close pull-right close"></a>
+
         <h1 class="title">Formulary Restrictions</h1>
     </header>
 
@@ -19,7 +43,8 @@
                 <a class="">
                     <div class="media-body">
                         PA - Prior Authorization
-                        <p>Drugs that require prior authorization. This restriction requires that specific clinical criteria be met prior to the approval of the prescription.</p>
+                        <p>Drugs that require prior authorization. This restriction requires that specific clinical
+                            criteria be met prior to the approval of the prescription.</p>
                     </div>
                 </a>
             </li>
@@ -27,7 +52,8 @@
                 <a class="">
                     <div class="media-body">
                         QL - Quantity Limits
-                        <p>Drugs that have quantity limits associated with each prescription. This restriction typically limits the quantity of drug that will be covered.</p>
+                        <p>Drugs that have quantity limits associated with each prescription. This restriction typically
+                            limits the quantity of drug that will be covered.</p>
                     </div>
                 </a>
             </li>
@@ -35,7 +61,8 @@
                 <a class="">
                     <div class="media-body">
                         ST - Step Therapy
-                        <p>Drugs that have step therapy associated with each prescription. This restriction typically requires that certain criteria be met prior to approval for the prescription.</p>
+                        <p>Drugs that have step therapy associated with each prescription. This restriction typically
+                            requires that certain criteria be met prior to approval for the prescription.</p>
                     </div>
                 </a>
             </li>
@@ -43,7 +70,8 @@
                 <a class="">
                     <div class="media-body">
                         OR - Other Restrictions
-                        <p>Drugs that have restrictions other than prior authorization, quantity limits, and step therapy associated with each prescription.</p>
+                        <p>Drugs that have restrictions other than prior authorization, quantity limits, and step
+                            therapy associated with each prescription.</p>
                     </div>
                 </a>
             </li>
@@ -55,13 +83,31 @@
     <div class="padding-row"></div>
     <div class="details" id="drug-name">
         <h4><%= drug_name %></h4>
-        <div class="cap"><%= state_name %></div>
+
         <div>Tier: <%= tier_code %></div>
-        <div><a href="<%= plan_url %>"><%= plan_name %></a></div>
-        <div><%= additional_info %></div>
+        <div><a target="_blank" href="<%= plan_url %>"><%= plan_name %></a></div>
+        <div class="cap"><%= state_name %></div>
+        <% if (restriction_code == "") { restriction_code = "None"; } %>
         <div>Restriction: <%= restriction_code %>
             <span data-target="restrictionModal" class="icon icon-info modal-js"></span>
         </div>
+        <% if (additional_info != "None") { %>
+        <div>Additional Information: <%= additional_info %></div>
+        <% } %>
     </div>
     <div class="padding-row"></div>
+    <div class="more-actions">
+        <button class="btn btn-positive" onclick="app.router.home();">Select Another Drug</button>
+        <button class="btn"
+                onclick='window.open("mailto:?subject=Formulary for your drug <%= drug_name %>&body=Tier Code: <%= tier_code %>%0D%0A Plan: <%= plan_name %> %0D%0A State: <%= state_name %> %0D%0A Restriction Code: <%= restriction_code %> %0D%0A Additional Info: <%= additional_info %>");'>
+            Email Result
+        </button>
+        <div><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.usvsolutions.com/formulary" data-text="I found an awesome Formulary LookupApp" data-size="large" data-hashtags="medicalappformulary">Share on Tweeter</a></div>
+
+        <div class="fb-wrapper"><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" data-width="100%"></div></div>
+        <div><div class="g-plusone" data-size="medium" data-count="true"></div></div>
+
+    </div>
+
+
 </div>
