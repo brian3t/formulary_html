@@ -4,3 +4,4 @@
 .idea/**
 ratchet/.sass-cache
 css/compass/.sass-cache
+js/app.js
