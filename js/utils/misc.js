@@ -67,13 +67,14 @@ app.utils.misc = (function () {
             $('.modal-js').each(function () {
                 $(this).click(function () {
                     $('#' + $(this).data('target')).addClass("active");
-                });
-            });
-                $('div.modal>header>a').each(function () {
-                        $(this).click(function(){
-                                $(this).parent().parent('div.modal').removeClass("active");
+                    $('div.modal>header>a').each(function () {
+                        $(this).click(function () {
+                            $(this).parent().parent('div.modal').removeClass("active");
                         });
+                    });
                 });
+
+            });
 
         };
     return {

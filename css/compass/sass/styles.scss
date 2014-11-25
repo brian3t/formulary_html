@@ -4,16 +4,27 @@ body{
   font-family: "Quicksand", sans-serif;
   font-size: 19px;
   background-color: inherit;
+  position: absolute;
+  min-height: 640px;
 }
 button, input, select, textarea {
   font-family: "Quicksand", sans-serif;
 }
 .content{
-  // needs latest Compass, add '@import "compass"' to your scss
-  background-color: rgb(62,119,185); // Old browsers
-  @include filter-gradient(#3e77b9, #9dd9f8, horizontal); // IE6-9 fallback on horizontal gradient
-  @include background-image(linear-gradient(left top,  rgba(62,119,185,1) 0%,rgba(73,169,248,1) 10%,rgba(64,156,234,1) 20%,rgba(157,217,248,1) 70%));
-  padding: 54px !important;
+  background-color: rgb(208,228,247);
+  @include filter-gradient(#d0e4f7, #87bcea, horizontal);
+  @include background-image(linear-gradient(left top,  rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(80,152,211,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%));
+
+
+}
+.bar-nav~.content{
+  padding: 54px 10px 10px 10px;
+}
+a{
+  color:#003ED0
+}
+div.details >div {
+  padding: 5px 0px;
 }
 ul {
   clear: both
@@ -23,7 +34,7 @@ ul {
 }
 
 .content {
-  position: absolute;
+//  position: absolute;
 }
 select{
   font-family: "Quicksand", sans-serif;
@@ -119,3 +130,5 @@ header.bar {
   background: url("../../../img/top.png")  center no-repeat;
   background-size: 100% 100%;
 }
+ul:empty{
+  display: none;}

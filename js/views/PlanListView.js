@@ -19,10 +19,9 @@ app.views.PlanListView = Backbone.View.extend({
 });
 
 app.views.PlanListItemView = Backbone.View.extend({
-
     tagName:"li",
     appendParamsToLi: function(){
-        $("a", this.$el).attr("href",  "#formulary/4692/1838/nm");
+        //$("a", this.$el).attr("href",  "#formulary/4692/1838/nm");
         $("a", this.$el).removeClass("pull-right");
     },
     className: "table-view-cell",
@@ -33,6 +32,7 @@ app.views.PlanListItemView = Backbone.View.extend({
     },
 
     render:function () {
+        this.model.attributes["drug_id"] = 1838;
         this.$el.html(this.template(this.model.attributes));
         this.appendParamsToLi();
         return this;

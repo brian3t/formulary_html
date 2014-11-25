@@ -1,5 +1,5 @@
 app.models.Plan = Backbone.Model.extend({
-
+    //drug_id:1838,//environment variables, such as currently selected drug info
     initialize: function () {
     },
 
