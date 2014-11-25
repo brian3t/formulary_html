@@ -7,3 +7,5 @@ ratchet/.sass-cache/**
 css/compass/.sass-cache
 css/compass/.sass-cache/**
 js/app.js
+css/.sass-cache
+css/.sass-cache/**
