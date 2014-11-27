@@ -198,5 +198,5 @@ header.bar {
 
 /* line 146, ../sass/styles.scss */
 ul:empty {
-  display: none;
+  border: none;
 }
