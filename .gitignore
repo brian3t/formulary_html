@@ -4,9 +4,9 @@
 .idea/**
 ratchet/.sass-cache
 ratchet/.sass-cache/**
-css/compass/.sass-cache
-css/compass/.sass-cache/**
-js/app.js
-css/.sass-cache
-css/.sass-cache/**
-node_modules
+www/css/compass/.sass-cache
+www/css/compass/.sass-cache/**
+www/js/app.js
+www/css/.sass-cache
+www/css/.sass-cache/**
+www/node_modules
