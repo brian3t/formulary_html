@@ -21,11 +21,11 @@
                     };
 
             // Twitter SDK
-            add('//platform.twitter.com/widgets.js');
-            // Google+ button
-            add('http://apis.google.com/js/plusone.js');
+//            add('http://platform.twitter.com/widgets.js');
             // Facebook SDK
-            add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
+            add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
+            // Google+ button
+//            add('http://apis.google.com/js/plusone.js');
 
             fjs.parentNode.insertBefore(frag, fjs);
         }(document, 'script'));
@@ -187,7 +187,11 @@
     <div class="details" id="drug-name">
         <h4><%= drug_name %></h4>
 
-        <div><a target="_blank" href="<%= plan_url %>"><%= plan_name %></a></div>
+        <div><%= plan_name %>
+            <% if (plan_url !== "") {%>
+                <span href="<%= plan_url %>" onclick="app.utils.misc.applyInAppBrowser('<%= plan_url %>')"><span class="icon icon-download"></span></span>
+            <% } %>
+        </div>
         <div class="cap"><%= state_name %></div>
         <div>Tier: <%= tier_code %>
             <span data-target="tierCodeModal" class="icon icon-info modal-js"></span>
@@ -207,16 +211,16 @@
                 onclick='window.open("mailto:?subject=Formulary for your drug <%= drug_name %>&body=Tier Code: <%= tier_code %>%0D%0A Plan: <%= plan_name %> %0D%0A State: <%= state_name %> %0D%0A Restriction Code: <%= restriction_code %> %0D%0A Additional Info: <%= additional_info %>");'>
             Email Result
         </button>
-        <div><a href="https://twitter.com/share" class="twitter-share-button"
-                data-url="http://www.usvsolutions.com/formulary" data-text="I found an awesome Formulary LookupApp"
-                data-size="large" data-hashtags="medicalappformulary">Share on Tweeter</a></div>
+        <div><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
+                data-url="http://formularymedical.com/" data-text="I found an awesome Formulary LookupApp"
+                data-size="large" data-hashtags="medical app formulary lookup iphone ipad">Share on Tweeter</a></div>
 
         <div class="fb-wrapper">
-            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"
+            <div class="fb-like" data-href="http://formularymedical.com/" data-layout="button_count"
                  data-action="like" data-show-faces="true" data-share="true" data-width="100%"></div>
         </div>
         <div>
-            <div class="g-plusone" data-size="medium" data-count="true"></div>
+            <div class="g-plusone" data-size="medium" data-count="true" data-output="embed"></div>
         </div>
 
     </div>

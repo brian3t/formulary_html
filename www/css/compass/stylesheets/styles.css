@@ -9,7 +9,7 @@ body {
   font-size: 19px;
   background-color: inherit;
   position: absolute;
-  min-height: 640px;
+  min-height: 100%;
 }
 
 /* line 10, ../sass/styles.scss */
@@ -200,3 +200,11 @@ header.bar {
 ul:empty {
   border: none;
 }
+
+/* fix ratchet */
+/* line 149, ../sass/styles.scss */
+header.bar.bar-nav {
+  -webkit-transform: translateZ(0);
+}
+
+/* end fix ratchet */

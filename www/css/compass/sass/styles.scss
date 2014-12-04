@@ -5,7 +5,7 @@ body{
   font-size: 19px;
   background-color: inherit;
   position: absolute;
-  min-height: 640px;
+  min-height: 100%;
 }
 button, input, select, textarea {
   font-family: "Quicksand", sans-serif;
@@ -145,3 +145,12 @@ header.bar {
 }
 ul:empty{
   border: none;}
+/* fix ratchet */
+header.bar.bar-nav{-webkit-transform: translateZ(0)}
+//html{z-index: 1}
+//body{z-index: 2}
+//.page{z-index: 3}
+//header{z-index: 11}
+//header *{z-index: 12}
+//.modal.bar{  z-index: 13 }
+/* end fix ratchet */

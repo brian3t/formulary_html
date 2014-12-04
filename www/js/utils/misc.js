@@ -76,10 +76,25 @@ app.utils.misc = (function () {
 
             });
 
-        };
+        },
+        applyInAppBrowser = function (href) {
+            if (href == "" || (typeof href == "undefined")) {
+                return;
+            }
+            if ((href.indexOf('.pdf') !== -1) || (href.indexOf('.doc') !== -1)) {
+                var ref = window.open('https://docs.google.com/viewer?url=' + href + '&embedded=true', '_blank', 'toolbarposition=top,toolbar=yes');
+            }
+            else {
+                var ref = window.open(href, '_blank', 'toolbarposition=top,toolbar=yes');
+            }
+
+
+        }
+        ;
     return {
         USSTATES: USSTATES,
-        bindModal: bindModal
+        bindModal: bindModal,
+        applyInAppBrowser: applyInAppBrowser
     };
 
 }());

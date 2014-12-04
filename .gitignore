@@ -10,3 +10,7 @@ www/js/app.js
 www/css/.sass-cache
 www/css/.sass-cache/**
 www/node_modules
+platforms
+platforms/**
+plugins
+plugins/**
