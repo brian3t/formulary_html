@@ -2,12 +2,7 @@ app.views.DrugView = Backbone.View.extend({
     initialize: function () {
         this.searchResults = new app.models.PlanCollection();
         this.searchresultsView = new app.views.PlanListView({model: this.searchResults});
-        app.views.PlanListItemView.drug_id = this.model.attributes["id"];
-        $.each($('#plan-list>ul>li>a'), function(i, v){
-            $(v).click(function(){
-
-            });
-        });
+        app.views.PlanListItemView.drug_id = this.model.attributes["id"];/*storing selected drug id*/
     },
 
     render: function () {

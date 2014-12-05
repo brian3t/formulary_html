@@ -23,7 +23,6 @@ app.adapters.plan = (function () {
             var results = plans.filter(function (element) {
                 return element.name.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
             });
-            results = results.slice(0, 20);
             deferred.resolve(results);
             return deferred.promise();
         },

@@ -201,8 +201,18 @@ ul:empty {
   border: none;
 }
 
-/* fix ratchet */
+/* line 148, ../sass/styles.scss */
+.hidden {
+  display: none;
+}
+
 /* line 149, ../sass/styles.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* fix ratchet */
+/* line 151, ../sass/styles.scss */
 header.bar.bar-nav {
   -webkit-transform: translateZ(0);
 }

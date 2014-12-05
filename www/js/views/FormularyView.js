@@ -1,5 +1,8 @@
 app.views.FormularyView = Backbone.View.extend({
     initialize: function () {
+        this.planSearchResults = new app.models.PlanCollection();
+        this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
+
         //async update drug name and plan details
         var self = this;
         $.when(app.adapters.drug.findById(this.model.get('drug_id'))).then(function (data) {
@@ -24,23 +27,39 @@ app.views.FormularyView = Backbone.View.extend({
 
     events: {
         "click .btn-back": "back",
-        "keyup .search-key": "search",
-        "keypress .search-key": "onkeypress"
+        "keyup #plan-select.search-key": "searchPlan",
+        "keypress .search-key": "onkeypress",
+        "change #state": "changeState",
+        "click #current-state": "showSelectState",
+        "click #current-plan .icon-edit": "showSelectPlan"
+    },
+    changeState: function (event) {
+        this.model.set('state', event.currentTarget.value);
+        $('#state-name').html($(event.currentTarget.selectedOptions).text());
+        $('#result').hide();
+        this.showSelectPlan();
+    },
+    showSelectState: function () {
+        $('#current-state').toggle();
+        $('#state_select').toggle();
+    },
+    showSelectPlan: function () {
+        $('#current-plan').toggle();
+        $('#plan-select-wrap').toggle();
+    },
+    foo: function (event) {
+        console.log("bar");
     },
 
     back: function (event) {
         window.history.back();
         return false;
     },
-    search: function (event) {
-        var key = $('.search-key').val();
-        var stateEle = $('#state');
-        var stateVal = "ca";
-        if (stateEle.length !== 0) {
-            stateVal = stateEle.val();
-        }
-        ;
-        this.searchResults.fetch({reset: true, data: {name: key, state: stateVal}});
+    searchPlan: function (event) {
+        var key = $('#plan-select.search-key').val();
+        var stateVal = this.model.get('state');
+        this.planSearchResults.fetch({reset: true, data: {name: key, state: stateVal}});
+        $('#plan-list', this.el).append(this.planSearchresultsView.render().el);
     },
 
     onkeypress: function (event) {
