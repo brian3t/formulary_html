@@ -46,27 +46,32 @@ a {
 }
 
 /* line 29, ../sass/styles.scss */
+p {
+  color: #fff;
+}
+
+/* line 32, ../sass/styles.scss */
 .fb-wrapper {
   margin-top: -10px;
   margin-bottom: 24px;
 }
 
-/* line 32, ../sass/styles.scss */
+/* line 35, ../sass/styles.scss */
 div.details > div {
   padding: 5px 0px;
 }
 
-/* line 35, ../sass/styles.scss */
+/* line 38, ../sass/styles.scss */
 ul {
   clear: both;
 }
 
-/* line 38, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 .title {
   font-weight: 600;
 }
 
-/* line 41, ../sass/styles.scss */
+/* line 44, ../sass/styles.scss */
 #loading {
   background: url("../../../img/spinner-blue.gif") no-repeat 50%;
   width: 100%;
@@ -76,143 +81,143 @@ ul {
   background-size: 50px;
 }
 
-/* line 52, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 select {
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
 }
 
-/* line 56, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 .w90 {
   width: 90%;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 .bar-header-secondary > input {
   margin-top: 6px;
   height: 31px;
 }
 
-/* line 62, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .details {
   margin: auto;
 }
-/* line 64, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 .details > img {
   float: left;
   margin: 10px;
   width: 80px;
   height: 80px;
 }
-/* line 70, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 .details h1 {
   padding-top: 16px;
   font-size: 18px;
 }
 
-/* line 76, ../sass/styles.scss */
+/* line 79, ../sass/styles.scss */
 .home .table-view {
   margin: 0 !important;
   border: none;
 }
 
-/* line 81, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 .media-object {
   width: 42px;
   height: 42px;
 }
 
-/* line 86, ../sass/styles.scss */
+/* line 89, ../sass/styles.scss */
 .icon-call {
   background: transparent url(../../images/ic_action_phone_outgoing.png);
   background-repeat: no-repeat;
 }
 
-/* line 91, ../sass/styles.scss */
+/* line 94, ../sass/styles.scss */
 .icon-sms {
   background: transparent url(../../images/ic_action_dialog.png);
   background-repeat: no-repeat;
 }
 
-/* line 96, ../sass/styles.scss */
+/* line 99, ../sass/styles.scss */
 .icon-mail {
   background: transparent url(../../images/ic_action_mail.png);
   background-repeat: no-repeat;
 }
 
-/* line 101, ../sass/styles.scss */
+/* line 104, ../sass/styles.scss */
 .icon-manager {
   background: transparent url(../../images/ic_action_user.png);
   background-repeat: no-repeat;
 }
 
-/* line 106, ../sass/styles.scss */
+/* line 109, ../sass/styles.scss */
 .icon-reports {
   background: transparent url(../../images/ic_action_users.png);
   background-repeat: no-repeat;
 }
 
-/* line 111, ../sass/styles.scss */
+/* line 114, ../sass/styles.scss */
 .icon-contact {
   background: transparent url(../../images/ic_action_add.png);
   background-repeat: no-repeat;
 }
 
-/* line 116, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 .icon-location {
   background: transparent url(../../images/ic_action_location.png);
   background-repeat: no-repeat;
 }
 
-/* line 121, ../sass/styles.scss */
+/* line 124, ../sass/styles.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 125, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 .padding-row {
   width: 100%;
   height: 15px;
 }
 
-/* line 130, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 .inset {
   padding: 3px 3%;
 }
 
-/* line 134, ../sass/styles.scss */
+/* line 137, ../sass/styles.scss */
 .bar {
   border-bottom: none;
 }
 
-/* line 138, ../sass/styles.scss */
+/* line 141, ../sass/styles.scss */
 .cap {
   text-transform: capitalize;
 }
 
-/* line 142, ../sass/styles.scss */
+/* line 145, ../sass/styles.scss */
 header.bar {
   background: url("../../../img/top.png") center no-repeat;
   background-size: 100% 100%;
 }
 
-/* line 146, ../sass/styles.scss */
+/* line 149, ../sass/styles.scss */
 ul:empty {
   border: none;
 }
 
-/* line 148, ../sass/styles.scss */
+/* line 151, ../sass/styles.scss */
 .hidden {
   display: none;
 }
 
-/* line 149, ../sass/styles.scss */
+/* line 152, ../sass/styles.scss */
 .pointer {
   cursor: pointer;
 }
 
 /* fix ratchet */
-/* line 151, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 header.bar.bar-nav {
   -webkit-transform: translateZ(0);
 }

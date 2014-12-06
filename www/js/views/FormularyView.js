@@ -22,9 +22,9 @@ app.views.FormularyView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         app.utils.misc.bindModal();
+        app.utils.misc.afterBBRender();
         return this;
     },
-
     events: {
         "click .btn-back": "back",
         "keyup #plan-select.search-key": "searchPlan",

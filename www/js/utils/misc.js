@@ -89,12 +89,21 @@ app.utils.misc = (function () {
             }
 
 
+        },
+        afterBBRender = function(){
+            if (isInWeb){
+                $('.cordova-only').hide();
+            }
+            else{
+                $('.non-cordova-only').hide();
+            }
         }
         ;
     return {
         USSTATES: USSTATES,
         bindModal: bindModal,
-        applyInAppBrowser: applyInAppBrowser
+        applyInAppBrowser: applyInAppBrowser,
+        afterBBRender : afterBBRender
     };
 
 }());

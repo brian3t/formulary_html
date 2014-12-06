@@ -15,7 +15,7 @@ app.utils.templates = (function() {
         });
 
         $.when.apply(null, deferreds).done(callback);
-    }
+    };
 
     // The public API
     return {

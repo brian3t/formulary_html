@@ -31,6 +31,19 @@
         }(document, 'script'));
     </script>
 </header>
+<div id="disclaimerModal" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right close"></a>
+
+        <h1 class="title">Disclaimer</h1>
+    </header>
+
+    <div class="content">
+        <p class="content-padded">
+            The contents of the FormularyMedical.com website and the FormularyMedical app, such as text, graphics, images, and other material contained on the FormularyMedical.com website and FormularyMedical app ("Content") are for informational purposes only. The Content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on the FormularyMedical website or FormularyMedical app!
+        </p>
+    </div>
+</div>
 <div id="restrictionModal" class="modal">
     <header class="bar bar-nav">
         <a class="icon icon-close pull-right close"></a>
@@ -274,23 +287,31 @@
     <div class="padding-row"></div>
     <div class="more-actions">
         <button class="btn btn-positive" onclick="app.router.home();">Select Another Drug</button>
-        <button class="btn"
-                onclick='window.open("mailto:?subject=Formulary for your drug <%= drug_name %>&body=Tier Code: <%= tier_code %>%0D%0A Plan: <%= plan_name %> %0D%0A State: <%= state_name %> %0D%0A Restriction Code: <%= restriction_code %> %0D%0A Additional Info: <%= additional_info %>");'>
-            Email Result
+        <button class="btn cordova-only" onclick="navigator.share('Tier Code: <%= tier_code %>\r\n Plan: <%= plan_name %> \r\n State: <%= state_name %> \r\n Restriction Code: <%= restriction_code %> \r\n Additional Info: <%= additional_info %>. Get the app at: http://formularymedical.com ','Formulary for your drug <%= drug_name %>','')">
+            <span class="icon "></span>
+            Share
         </button>
-        <div><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
-                data-url="http://formularymedical.com/" data-text="I found an awesome Formulary LookupApp"
-                data-size="large" data-hashtags="medical app formulary lookup iphone ipad">Share on Tweeter</a></div>
+        <div class="non-cordova-only">
+            <button class="btn"
+                    onclick='window.open("mailto:?subject=Formulary for your drug <%= drug_name %>&body=Tier Code: <%= tier_code %>%0D%0A Plan: <%= plan_name %> %0D%0A State: <%= state_name %> %0D%0A Restriction Code: <%= restriction_code %> %0D%0A Additional Info: <%= additional_info %>");'>
+                Email Result
+            </button>
+            <div><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
+                    data-url="http://formularymedical.com/" data-text="I found an awesome Formulary LookupApp"
+                    data-size="large" data-hashtags="medical app formulary lookup iphone ipad">Share on Tweeter</a>
+            </div>
 
-        <div class="fb-wrapper">
-            <div class="fb-like" data-href="http://formularymedical.com/" data-layout="button_count"
-                 data-action="like" data-show-faces="true" data-share="true" data-width="100%"></div>
-        </div>
-        <div>
-            <div class="g-plusone" data-size="medium" data-count="true" data-output="embed"></div>
+            <div class="fb-wrapper">
+                <div class="fb-like" data-href="http://formularymedical.com/" data-layout="button_count"
+                     data-action="like" data-show-faces="true" data-share="true" data-width="100%"></div>
+            </div>
+            <div>
+                <div class="g-plusone" data-size="medium" data-count="true" data-output="embed"></div>
+            </div>
         </div>
 
     </div>
-
+    <br/><br/><br/>
+    <a class="modal-js" data-target="disclaimerModal">Disclaimer</a>
 
 </div>
