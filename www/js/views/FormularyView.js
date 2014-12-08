@@ -3,6 +3,9 @@ app.views.FormularyView = Backbone.View.extend({
         this.planSearchResults = new app.models.PlanCollection();
         this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
 
+        this.drugSearchResults = new app.models.DrugCollection();
+        this.drugSearchresultsView = new app.views.DrugListView({model: this.drugSearchResults});
+
         //async update drug name and plan details
         var self = this;
         $.when(app.adapters.drug.findById(this.model.get('drug_id'))).then(function (data) {
@@ -28,12 +31,14 @@ app.views.FormularyView = Backbone.View.extend({
     events: {
         "click .btn-back": "back",
         "keyup #plan-select.search-key": "searchPlan",
+        "keyup #drug-select.search-key": "searchDrug",
         "keypress .search-key": "onkeypress",
-        "change #state": "changeState",
+        "select #state": "selectState",
         "click #current-state": "showSelectState",
-        "click #current-plan .icon-edit": "showSelectPlan"
+        "click #current-plan .icon-edit": "showSelectPlan",
+        "click #drug-name .icon-edit": "showSelectDrug"
     },
-    changeState: function (event) {
+    selectState: function (event) {
         this.model.set('state', event.currentTarget.value);
         $('#state-name').html($(event.currentTarget.selectedOptions).text());
         $('#result').hide();
@@ -42,6 +47,10 @@ app.views.FormularyView = Backbone.View.extend({
     showSelectState: function () {
         $('#current-state').toggle();
         $('#state_select').toggle();
+    },
+    showSelectDrug: function () {
+        $('#drug-name').toggle();
+        $('#drug-select-wrap').toggle();
     },
     showSelectPlan: function () {
         $('#current-plan').toggle();
@@ -60,6 +69,12 @@ app.views.FormularyView = Backbone.View.extend({
         var stateVal = this.model.get('state');
         this.planSearchResults.fetch({reset: true, data: {name: key, state: stateVal}});
         $('#plan-list', this.el).append(this.planSearchresultsView.render().el);
+    },
+
+    searchDrug: function (event) {
+        var key = $('#drug-select.search-key').val();
+        this.drugSearchResults.fetch({reset: true, data: {name: key}});
+        $('#drug-list', this.el).append(this.drugSearchresultsView.render().el);
     },
 
     onkeypress: function (event) {

@@ -4,10 +4,16 @@ app.views.DrugView = Backbone.View.extend({
         this.searchresultsView = new app.views.PlanListView({model: this.searchResults});
         app.views.PlanListItemView.drug_id = this.model.attributes["id"];/*storing selected drug id*/
     },
+    updateLocation: function(){
+        $('#state', this.$el).val(capp.position.stateCode);
+
+    },
 
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         $('#plan-list', this.el).append(this.searchresultsView.render().el);
+        navigator.geolocation.getCurrentPosition(capp.onGeolocationSuccess, capp.onGeoLocationError);
+        this.listenToOnce(capp.event_bus, 'iGotLocation', this.updateLocation);
         return this;
     },
 

@@ -14,3 +14,4 @@ platforms
 platforms/**
 plugins
 plugins/**
+platforms/ios/www

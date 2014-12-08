@@ -21,11 +21,11 @@
                     };
 
             // Twitter SDK
-//            add('http://platform.twitter.com/widgets.js');
+            add('http://platform.twitter.com/widgets.js');
             // Facebook SDK
-//            add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
+            add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
             // Google+ button
-//            add('http://apis.google.com/js/plusone.js');
+            add('http://apis.google.com/js/plusone.js');
 
             fjs.parentNode.insertBefore(frag, fjs);
         }(document, 'script'));
@@ -197,9 +197,15 @@
 
 <div class='content text-center'>
     <div class="padding-row"></div>
-    <div class="details" id="drug-name">
-        <h4><%= drug_name %></h4>
-        <!--<span id="state-code" class="hidden" data="><%= state %>"></span>-->
+    <div class="details">
+        <h4  id="drug-name"><%= drug_name %>
+            <span
+                class="pointer icon icon-edit"></span></h4>
+        <div id="drug-select-wrap" class="inset hidden">
+            <input id="drug-select" class='search-key' type="text"/>
+
+            <div id="drug-list"></div>
+        </div>
         <div id="current-state" class="cap"><span id="state-name"><%= state_name %></span><span
                 class="pointer icon icon-edit"></span></div>
         <div id="state_select" class="inset hidden">
@@ -298,7 +304,7 @@
             </button>
             <div><a target="_blank" href="https://twitter.com/share" class="twitter-share-button"
                     data-url="http://formularymedical.com/" data-text="I found an awesome Formulary LookupApp"
-                    data-size="large" data-hashtags="medical app formulary lookup iphone ipad">Share on Tweeter</a>
+                    data-size="large" data-hashtags="medical app formulary lookup iphone ipad">Share on Twitter</a>
             </div>
 
             <div class="fb-wrapper">
