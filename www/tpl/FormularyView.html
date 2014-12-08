@@ -21,11 +21,9 @@
                     };
 
             // Twitter SDK
-            add('http://platform.twitter.com/widgets.js');
-            // Facebook SDK
-            add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=1503339389930016', 'facebook-jssdk');
+            add('https://platform.twitter.com/widgets.js');
             // Google+ button
-            add('http://apis.google.com/js/plusone.js');
+            add('https://apis.google.com/js/plusone.js');
 
             fjs.parentNode.insertBefore(frag, fjs);
         }(document, 'script'));
@@ -40,7 +38,13 @@
 
     <div class="content">
         <p class="content-padded">
-            The contents of the FormularyMedical.com website and the FormularyMedical app, such as text, graphics, images, and other material contained on the FormularyMedical.com website and FormularyMedical app ("Content") are for informational purposes only. The Content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on the FormularyMedical website or FormularyMedical app!
+            The contents of the FormularyMedical.com website and the FormularyMedical app, such as text, graphics,
+            images, and other material contained on the FormularyMedical.com website and FormularyMedical app
+            ("Content") are for informational purposes only. The Content is not intended to be a substitute for
+            professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other
+            qualified health provider with any questions you may have regarding a medical condition. Never disregard
+            professional medical advice or delay in seeking it because of something you have read on the
+            FormularyMedical website or FormularyMedical app!
         </p>
     </div>
 </div>
@@ -198,9 +202,10 @@
 <div class='content text-center'>
     <div class="padding-row"></div>
     <div class="details">
-        <h4  id="drug-name"><%= drug_name %>
+        <h4 id="drug-name"><%= drug_name %>
             <span
-                class="pointer icon icon-edit"></span></h4>
+                    class="pointer icon icon-edit"></span></h4>
+
         <div id="drug-select-wrap" class="inset hidden">
             <input id="drug-select" class='search-key' type="text"/>
 
@@ -292,7 +297,8 @@
     </div>
     <div class="padding-row"></div>
     <div class="more-actions">
-        <button class="btn cordova-only" onclick="navigator.share('Tier Code: <%= tier_code %>\r\n Plan: <%= plan_name %> \r\n State: <%= state_name %> \r\n Restriction Code: <%= restriction_code %> \r\n Additional Info: <%= additional_info %>. Get the app at: http://formularymedical.com ','Formulary for your drug <%= drug_name %>','')">
+        <button class="btn cordova-only"
+                onclick="navigator.share('Tier Code: <%= tier_code %>\r\n Plan: <%= plan_name %> \r\n State: <%= state_name %> \r\n Restriction Code: <%= restriction_code %> \r\n Additional Info: <%= additional_info %>. Get the app at: http://formularymedical.com ','Formulary for your drug <%= drug_name %>','')">
             <span class="icon "></span>
             Share
         </button>

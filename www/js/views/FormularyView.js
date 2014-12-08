@@ -29,6 +29,10 @@ app.views.FormularyView = Backbone.View.extend({
         this.$el.html(this.template(this.model.attributes));
         app.utils.misc.bindModal();
         app.utils.misc.afterBBRender();
+        app.utils.misc.initFb();
+        if (typeof FB == "object"){
+            FB.XFBML.parse();
+        }
         return this;
     },
     events: {
