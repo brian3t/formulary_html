@@ -30,8 +30,15 @@ app.views.FormularyView = Backbone.View.extend({
         app.utils.misc.bindModal();
         app.utils.misc.afterBBRender();
         app.utils.misc.initFb();
-        if (typeof FB == "object"){
+        if (typeof FB == "object") {
             FB.XFBML.parse();
+        }
+        else {
+            setTimeout(function () {
+                if (typeof FB == "object") {
+                    FB.XFBML.parse();
+                }
+            }, 2000);
         }
         return this;
     },
