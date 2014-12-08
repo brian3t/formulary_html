@@ -12,7 +12,10 @@ app.views.DrugView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         $('#plan-list', this.el).append(this.searchresultsView.render().el);
-        navigator.geolocation.getCurrentPosition(capp.onGeolocationSuccess, capp.onGeoLocationError);
+        if (capp.position.stateCode=="")
+        {
+            navigator.geolocation.getCurrentPosition(capp.onGeolocationSuccess, capp.onGeoLocationError);
+        }
         this.listenToOnce(capp.event_bus, 'iGotLocation', this.updateLocation);
         return this;
     },

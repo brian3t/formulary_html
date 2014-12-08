@@ -1,5 +1,4 @@
 app.models.Drug = Backbone.Model.extend({
-
     initialize:function () {
         this.reports = new app.models.ReportsCollection();
         this.reports.parent = this;
@@ -13,7 +12,11 @@ app.models.Drug = Backbone.Model.extend({
         }
     }
 
-});
+},
+    {
+        f_id: '',
+        state_code: ''
+    });
 
 app.models.DrugCollection = Backbone.Collection.extend({
 

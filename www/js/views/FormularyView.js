@@ -3,8 +3,11 @@ app.views.FormularyView = Backbone.View.extend({
         this.planSearchResults = new app.models.PlanCollection();
         this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
 
+        //prepare f_id and state_code for DrugListGoToFormularyView
+        app.models.Drug.f_id = this.model.get('f_id');
+        app.models.Drug.state_code = this.model.get('state');
         this.drugSearchResults = new app.models.DrugCollection();
-        this.drugSearchresultsView = new app.views.DrugListView({model: this.drugSearchResults});
+        this.drugSearchresultsView = new app.views.DrugListGoToFormularyView({model: this.drugSearchResults});
 
         //async update drug name and plan details
         var self = this;
@@ -33,12 +36,12 @@ app.views.FormularyView = Backbone.View.extend({
         "keyup #plan-select.search-key": "searchPlan",
         "keyup #drug-select.search-key": "searchDrug",
         "keypress .search-key": "onkeypress",
-        "select #state": "selectState",
+        "change #state": "changeState",
         "click #current-state": "showSelectState",
         "click #current-plan .icon-edit": "showSelectPlan",
         "click #drug-name .icon-edit": "showSelectDrug"
     },
-    selectState: function (event) {
+    changeState: function (event) {
         this.model.set('state', event.currentTarget.value);
         $('#state-name').html($(event.currentTarget.selectedOptions).text());
         $('#result').hide();
