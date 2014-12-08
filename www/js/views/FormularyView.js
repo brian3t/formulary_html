@@ -1,11 +1,13 @@
 app.views.FormularyView = Backbone.View.extend({
     initialize: function () {
-        this.planSearchResults = new app.models.PlanCollection();
-        this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
-
         //prepare f_id and state_code for DrugListGoToFormularyView
         app.models.Drug.f_id = this.model.get('f_id');
         app.models.Drug.state_code = this.model.get('state');
+        app.views.PlanListItemView.drug_id = this.model.get('drug_id');
+
+        this.planSearchResults = new app.models.PlanCollection();
+        this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
+
         this.drugSearchResults = new app.models.DrugCollection();
         this.drugSearchresultsView = new app.views.DrugListGoToFormularyView({model: this.drugSearchResults});
 
