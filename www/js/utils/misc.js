@@ -103,7 +103,7 @@ app.utils.misc = (function () {
                 FB.init({
                     appId: '1503339389930016',
                     xfbml: true,
-                    version: 'v2.2'
+                    version: 'v1.0'
                 });
             };
 
