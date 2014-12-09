@@ -46,13 +46,13 @@ app.views.FormularyView = Backbone.View.extend({
     },
     events: {
         "click .btn-back": "back",
-        "keyup #plan-select.search-key": "searchPlan",
         "keyup #drug-select.search-key": "searchDrug",
         "keypress .search-key": "onkeypress",
         "change #state": "changeState",
         "click #current-state": "showSelectState",
         "click #current-plan .icon-edit": "showSelectPlan",
-        "click #drug-name .icon-edit": "showSelectDrug"
+        "click #drug-name .icon-edit": "showSelectDrug",
+        "keyup #plan-select.search-key": "searchPlan"
     },
     changeState: function (event) {
         this.model.set('state', event.currentTarget.value);
@@ -80,17 +80,17 @@ app.views.FormularyView = Backbone.View.extend({
         window.history.back();
         return false;
     },
-    searchPlan: function (event) {
-        var key = $('#plan-select.search-key').val();
-        var stateVal = this.model.get('state');
-        this.planSearchResults.fetch({reset: true, data: {name: key, state: stateVal}});
-        $('#plan-list', this.el).append(this.planSearchresultsView.render().el);
-    },
 
     searchDrug: function (event) {
         var key = $('#drug-select.search-key').val();
         this.drugSearchResults.fetch({reset: true, data: {name: key}});
         $('#drug-list', this.el).append(this.drugSearchresultsView.render().el);
+    },
+    searchPlan: function(event){
+      var key = $('#plan-select.search-key').val();//event.target.val()
+        var stateVal = this.model.get('state');
+        this.planSearchResults.fetch({reset:true, data:{name:key, state:stateVal}});
+        $('#plan-list', this.el).append(this.planSearchresultsView.render().el);//reuse backbonejs view element
     },
 
     onkeypress: function (event) {

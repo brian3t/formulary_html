@@ -6,6 +6,7 @@
 
     <h1 class="title">Formulary Details</h1>
     <script>
+        if (isInWeb){
         (function (doc, script) {
             var js,
                     fjs = doc.getElementsByTagName(script)[0],
@@ -26,7 +27,7 @@
             add('https://apis.google.com/js/plusone.js');
 
             fjs.parentNode.insertBefore(frag, fjs);
-        }(document, 'script'));
+        }(document, 'script'));}
     </script>
 </header>
 <div id="disclaimerModal" class="modal">
