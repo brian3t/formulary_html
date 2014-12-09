@@ -1,6 +1,5 @@
 app.views.FormularyView = Backbone.View.extend({
     initialize: function () {
-        //prepare f_id and state_code for DrugListGoToFormularyView
         app.models.Drug.f_id = this.model.get('f_id');
         app.models.Drug.state_code = this.model.get('state');
         app.views.PlanListItemView.drug_id = this.model.get('drug_id');
