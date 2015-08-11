@@ -103,7 +103,7 @@ app.utils.misc = (function () {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1503339389930016&version=v1.0";
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1503339389930016&version=v1.0";
                 try {fjs.parentNode.insertBefore(js, fjs);}
                 catch (e){
                     console.log('Facebook sdk error: '.e);
