@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
     <widget id="com.RCTC.IE511" version="1.4.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap = "http://phonegap.com/ns/1.0">
     <!-- versionCode is optional and Android only -->
-    <name>IE511</name>
+    <name>FormularyMedical</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        The best app for medical formulary lookup.
     </description>
     <author email="ceo@superbappsolutions.com" href="http://formularymedical.com">
         Superbappsolutions.com
