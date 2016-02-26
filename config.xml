@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.usvsolutions.formularymedical" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Formulary Medical</name>
+    <widget id="com.RCTC.IE511" version="1.4.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap = "http://phonegap.com/ns/1.0">
+    <!-- versionCode is optional and Android only -->
+    <name>IE511</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="ceo@superbappsolutions.com" href="http://formularymedical.com">
+        Superbappsolutions.com
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <platform name="ios">
         <!-- iOS 8.0+ -->
