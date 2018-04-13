@@ -1,9 +1,8 @@
-## Drug Directory ##
+# formulary_html
+Mobile / PhoneGap App built with Backbone.js and Ratchet
 
-### Sample Application built with Backbone.js and Ratchet 2.0 ###
+Live at https://formularymedical.com
 
-"Backbone Directory" is a simple Drug Directory application built with [Backbone.js](http://backbonejs.org) and [Ratchet] (https://github.com/twbs/ratchet).
+Serving thousands of medical practitioners in the U.S.
 
-Refer to [this blog post](http://coenraets.org) for more information about the application.
-
-The application runs out-of-the-box with an in-memory data store.
+Published at iTunes store: https://itunes.apple.com/us/app/formulary-medical/id949735021?mt=8
