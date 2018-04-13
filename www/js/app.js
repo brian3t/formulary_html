@@ -1,5 +1,11 @@
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
 var config = {restUrl: "https://usvsolutions.com/formulary_api/f/"};
+var IS_LOCAL = IS_LOCAL || false;
+
+if (IS_LOCAL){
+    config.restUrl = IP_ADDRESS;
+}
+
 var backboneInit = function () {
     app.router = new app.routers.AppRouter();
     app.utils.templates.load(["HomeView", "DrugView", "DrugListItemView", "DrugListGoToFormularyItemView", "PlanListItemView", "FormularyView"], function () {
