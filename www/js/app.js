@@ -37,6 +37,7 @@ var capp = {
         backboneInit();
         StatusBar.hide();
         $('body').height($('body').height() + 20);
+        StatusBar.overlaysWebView(true);
     },
     event_bus: _({}).extend(Backbone.Events),
     gMaps: {
