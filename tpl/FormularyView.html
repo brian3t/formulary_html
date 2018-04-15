@@ -6,9 +6,9 @@
 
     <h1 class="title">Formulary Details</h1>
     <script>
-        if (isInWeb){
-        (function (doc, script) {
-            var js,
+        if (isInWeb) {
+            (function (doc, script) {
+                var js,
                     fjs = doc.getElementsByTagName(script)[0],
                     frag = doc.createDocumentFragment(),
                     add = function (url, id) {
@@ -21,15 +21,21 @@
                         frag.appendChild(js);
                     };
 
-            // Twitter SDK
-            add('https://platform.twitter.com/widgets.js');
-            // Google+ button
-            add('https://apis.google.com/js/plusone.js');
+                // Twitter SDK
+                add('https://platform.twitter.com/widgets.js');
+                // Google+ button
+                add('https://apis.google.com/js/plusone.js');
 
-            fjs.parentNode.insertBefore(frag, fjs);
-        }(document, 'script'));}
+                fjs.parentNode.insertBefore(frag, fjs);
+            }(document, 'script'));
+        }
     </script>
 </header>
+<% if (typeof restriction_code == 'undefined' || restriction_code == "") { restriction_code = "No information yet"; }
+    if (typeof additional_info == 'undefined') { additional_info = "No information yet"; }
+    if (typeof tier_code == 'undefined') { tier_code = "No information yet"; }
+%>
+
 <div id="disclaimerModal" class="modal">
     <header class="bar bar-nav">
         <a class="icon icon-close pull-right close"></a>
@@ -58,46 +64,46 @@
 
     <div class="content">
         <p class="content-padded">
-        <ul class="table-view">
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        PA - Prior Authorization
-                        <p>Drugs that require prior authorization. This restriction requires that specific clinical
-                            criteria be met prior to the approval of the prescription.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        QL - Quantity Limits
-                        <p>Drugs that have quantity limits associated with each prescription. This restriction typically
-                            limits the quantity of drug that will be covered.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        ST - Step Therapy
-                        <p>Drugs that have step therapy associated with each prescription. This restriction typically
-                            requires that certain criteria be met prior to approval for the prescription.</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        OR - Other Restrictions
-                        <p>Drugs that have restrictions other than prior authorization, quantity limits, and step
-                            therapy associated with each prescription.</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
-        </p>
+            <ul class="table-view">
+                <li class="table-view-cell media">
+                    <a class="">
+                        <div class="media-body">
+                            PA - Prior Authorization
+        <p>Drugs that require prior authorization. This restriction requires that specific clinical
+            criteria be met prior to the approval of the prescription.</p>
     </div>
+    </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                QL - Quantity Limits
+                <p>Drugs that have quantity limits associated with each prescription. This restriction typically
+                    limits the quantity of drug that will be covered.</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                ST - Step Therapy
+                <p>Drugs that have step therapy associated with each prescription. This restriction typically
+                    requires that certain criteria be met prior to approval for the prescription.</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                OR - Other Restrictions
+                <p>Drugs that have restrictions other than prior authorization, quantity limits, and step
+                    therapy associated with each prescription.</p>
+            </div>
+        </a>
+    </li>
+    </ul>
+    </p>
+</div>
 </div>
 <div id="tierCodeModal" class="modal">
     <header class="bar bar-nav">
@@ -108,96 +114,96 @@
 
     <div class="content">
         <p class="content-padded">
-        <ul class="table-view">
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        1
-                        <p>Tier 1 usually includes generic medications</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        2
-                        <p>Tier 2 usually includes preferred brand name medications</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        3
-                        <p>Tier 3 usually includes non-preferred brand name medications</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        4
-                        <p>Tier 4 usually includes specialty medications (3-Tier programs do not have a unique tier for
-                            specialty medications)</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        3P
-                        <p>Preferred – This drug is available at a preferred co-pay. Most commonly used when Tiers 1 and
-                            2 apply to preferred generic and non-preferred generic drugs, respectively</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        5
-                        <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
-                            brand drugs or specialty prescription products</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        6
-                        <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
-                            brand drugs or specialty prescription products</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        7
-                        <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
-                            brand drugs or specialty prescription products</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        NC
-                        <p>Not Covered: Drug is not covered by the selected plan</p>
-                    </div>
-                </a>
-            </li>
-            <li class="table-view-cell media">
-                <a class="">
-                    <div class="media-body">
-                        NA
-                        <p>Not Available: Formulary data for this drug together with this health plan are not available
-                            at this moment</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
-        </p>
+            <ul class="table-view">
+                <li class="table-view-cell media">
+                    <a class="">
+                        <div class="media-body">
+                            1
+        <p>Tier 1 usually includes generic medications</p>
     </div>
+    </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                2
+                <p>Tier 2 usually includes preferred brand name medications</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                3
+                <p>Tier 3 usually includes non-preferred brand name medications</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                4
+                <p>Tier 4 usually includes specialty medications (3-Tier programs do not have a unique tier for
+                    specialty medications)</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                3P
+                <p>Preferred – This drug is available at a preferred co-pay. Most commonly used when Tiers 1 and
+                    2 apply to preferred generic and non-preferred generic drugs, respectively</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                5
+                <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
+                    brand drugs or specialty prescription products</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                6
+                <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
+                    brand drugs or specialty prescription products</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                7
+                <p>This drug is available at a higher level co-pay. Most commonly, these are "non-preferred"
+                    brand drugs or specialty prescription products</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                NC
+                <p>Not Covered: Drug is not covered by the selected plan</p>
+            </div>
+        </a>
+    </li>
+    <li class="table-view-cell media">
+        <a class="">
+            <div class="media-body">
+                NA
+                <p>Not Available: Formulary data for this drug together with this health plan are not available
+                    at this moment</p>
+            </div>
+        </a>
+    </li>
+    </ul>
+    </p>
+</div>
 </div>
 
 <div class='content text-center'>
@@ -287,7 +293,6 @@
             <div>Tier: <%= tier_code %>
                 <span data-target="tierCodeModal" class="icon icon-info modal-js"></span>
             </div>
-            <% if (restriction_code == "") { restriction_code = "None"; } %>
             <div>Restriction: <%= restriction_code %>
                 <span data-target="restrictionModal" class="icon icon-info modal-js"></span>
             </div>

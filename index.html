@@ -22,7 +22,13 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' http://fonts.gstatic.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net http://google-analytics.com https://google-analytics.com http://ajax.googleapis.com https://ajax.googleapis.com http://cdnjs.cloudflare.com https://cdnjs.cloudflare.com; connect-src 'self' http://formapi http://usvsolutions.com https://usvsolutions.com; img-src 'self' data:; style-src 'self' http://fonts.googleapis.com https://fonts.googleapis.com; frame-src http://*.facebook.com https://www.facebook.com http://www.facebook.com https://*.facebook.com;
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' http://fonts.gstatic.com https://fonts.gstatic.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://platform.twitter.com https://apis.google.com
+        https://connect.facebook.net http://google-analytics.com https://google-analytics.com http://ajax.googleapis.com https://ajax.googleapis.com http://cdnjs.cloudflare.com https://cdnjs.cloudflare.com;
+        connect-src 'self' http://formapi http://usvsolutions.com https://usvsolutions.com;
+        img-src 'self' data: https://facebook.com https://www.facebook.com *.twitter.com;
+        style-src 'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com;
+        frame-src http://*.facebook.com https://www.facebook.com http://www.facebook.com https://*.facebook.com *.twitter.com *.google.com;
         child-src http://*.facebook.com https://www.facebook.com http://www.facebook.com https://*.facebook.com;" >
         <!-- child-src same as frame-src -->
 
