@@ -14,3 +14,4 @@ platforms/**
 plugins
 plugins/**
 platforms/ios/www
+/js/local.js
