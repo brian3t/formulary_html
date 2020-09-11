@@ -23,12 +23,14 @@ app.routers.AppRouter = Backbone.Router.extend({
     },
 
     drugDetails: function (id) {
-        var drug = new app.models.Drug({id: id});
+        let drug = new app.models.Drug({id: id});
         drug.fetch({
-            success: function (data) {
+            success: async function (data) {
                 // Note that we could also 'recycle' the same instance of DrugFullView
                 // instead of creating new instances
-                app.slider.slidePage(new app.views.DrugView({model: data}).render().$el);
+                let formulary_view = new app.views.DrugView({model: data})
+                await formulary_view.initialize()
+                app.slider.slidePage(formulary_view.render().$el);
             }
         });
     },

@@ -31,12 +31,17 @@ app.views.DrugView = Backbone.View.extend({
         return false;
     },
     search: function (event) {
-        var key = $('.search-key').val();
-        var stateEle = $('#state');
-        var stateVal = "CA";
+        //scroll top
+        let stateEle = $('#state'), state_top = stateEle.offset().top
+        if (state_top > 10){
+            $('div.content').scrollTop(state_top)
+        }
+
+        let key = $('.search-key').val();
+        let stateVal = "CA";
         if (stateEle.length !== 0) {
             stateVal = stateEle.val();
-        };
+        }
         this.searchResults.fetch({reset: true, data: {name: key, state: stateVal}});
     },
 

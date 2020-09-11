@@ -1,5 +1,5 @@
 app.views.FormularyView = Backbone.View.extend({
-    initialize: function () {
+    initialize: async function () {
         app.models.Drug.f_id = this.model.get('f_id');
         app.models.Drug.state_code = this.model.get('state');
         app.views.PlanListItemView.drug_id = this.model.get('drug_id');
@@ -12,9 +12,8 @@ app.views.FormularyView = Backbone.View.extend({
 
         //async update drug name and plan details
         var self = this;
-        $.when(app.adapters.drug.findById(this.model.get('drug_id'))).then(function (data) {
-            self.model.set('drug_name', data.name);
-        });
+        let drug = await app.adapters.drug.findById(this.model.get('drug_id'))
+        self.model.set('drug_name', drug.name);
         var state = this.model.get("state");
         this.model.set({
             "state_name": app.utils.misc.USSTATES[state]

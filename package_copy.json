@@ -1,0 +1,29 @@
+{
+    "name": "helloworld",
+    "displayName": "HelloCordova",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ecosystem:cordova"
+    ],
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "cordova-android": "^9.0.0",
+        "cordova-plugin-statusbar": "~2.2.1",
+        "cordova-plugin-splashscreen": "^5.0.4"
+    },
+    "dependencies": {},
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-wkwebview-engine": {},
+            "cordova-plugin-wkwebview-file-xhr": {}
+        }
+    }
+}

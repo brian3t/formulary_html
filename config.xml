@@ -9,8 +9,9 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="phonegap-version" value="cli-9.0.0" />
+    <preference name="phonegap-version" value="cli-10.0.0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="fullscreen" value="false" />
     <platform name="ios">
         <icon height="20" src="res/icon/ios/icon-20.png" width="20" />
         <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
@@ -69,4 +70,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.4" />
     <plugin name="cordova-plugin-wkwebview-engine" />
     <plugin name="cordova-plugin-wkwebview-file-xhr" />
+    <plugin name="cordova-plugin-whitelist" />
 </widget>
