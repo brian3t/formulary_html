@@ -12,7 +12,7 @@
         <div><%= name %></div>
     </div>
     <div class="padding-row"></div>
-    <div class="inset">
+    <div class="inset w100">
         <label for="state">Select Health Plan State </label>
         <div class="padding-row"></div>
         <select name="state" id="state">
@@ -71,11 +71,11 @@
         <label for="plan-select">Select Health Plan</label>
         <div class="padding-row"></div>
         <input id="plan-select" class='search-key' type="text"/>
-        <div id="plan-list"></div>
+        <div id="plan-list" class="dropdown"></div>
         <button class="btn btn-positive" onclick="app.router.home();">Select Another Drug</button>
     </div>
-</div>
-<div class="footer">
-    For any questions or comments, please
-    <a href="mailto:ceo@usvsolutions.com" target="_blank"> contact our team</a>
+    <div class="footer">
+        For any questions or comments, please
+        <a href="mailto:ceo@usvsolutions.com" target="_blank"> contact our team</a>
+    </div>
 </div>
