@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.usvsolutions.formularymedical" version="1.4.11" xmlns="http://www.w3.org/ns/widgets">
+<widget id="com.usvsolutions.formularymedical" version="1.4.12" xmlns="http://www.w3.org/ns/widgets">
     <name>FormularyMedical</name>
     <description>
         The best app for medical formulary lookup.
