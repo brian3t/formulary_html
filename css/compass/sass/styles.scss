@@ -154,7 +154,7 @@ ul:empty{
 header.bar.bar-nav{-webkit-transform: translateZ(0); z-index: 100}
 /* end fix ratchet */
 div.inset {
-  position: inherit; z-index: 11;
+  position: inherit; z-index: 11; width:94%;
 }
 div.dropdown{ z-index: 11 }
 div.footer{z-index: 0}

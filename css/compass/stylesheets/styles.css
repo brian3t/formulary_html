@@ -150,7 +150,8 @@ header.bar.bar-nav {
 /* end fix ratchet */
 div.inset {
   position: inherit;
-  z-index: 11; }
+  z-index: 11;
+  width: 94%; }
 
 div.dropdown {
   z-index: 11; }
