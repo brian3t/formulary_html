@@ -1,7 +1,7 @@
 app.models.Drug = Backbone.Model.extend({
     initialize:function () {
-        this.reports = new app.models.ReportsCollection();
-        this.reports.parent = this;
+        this.drugs = new app.models.DrugCollection();
+        this.drugs.parent = this;
     },
 
     sync: function(method, model, options) {
@@ -14,8 +14,9 @@ app.models.Drug = Backbone.Model.extend({
 
 },
     {
-        f_id: '',
-        state_code: ''
+        id: undefined,
+        ndc: '',
+        proprietary_name: ''
     });
 
 app.models.DrugCollection = Backbone.Collection.extend({
@@ -25,6 +26,11 @@ app.models.DrugCollection = Backbone.Collection.extend({
     sync: function(method, model, options) {
         if (method === "read") {
             app.adapters.drug.findByName(options.data.name).done(function (data) {
+                //convert drug models from array form to object form
+                data.forEach((e, i)=>{
+                    let obj = {id: e[0], ndc: e[1], proprietary_name: e[2]}
+                    data[i] = obj
+                })
                 options.success(data);
             });
         }
@@ -32,17 +38,3 @@ app.models.DrugCollection = Backbone.Collection.extend({
 
 });
 
-app.models.ReportsCollection = Backbone.Collection.extend({
-
-    model: app.models.Drug
-
-    //sync: function(method, model, options) {
-    //    if (method === "read") {
-    //        console.log("find by manager");
-    //        app.adapters.drug.findByManager(this.parent.id).done(function (data) {
-    //            options.success(data);
-    //        });
-    //    }
-    //}
-
-});
