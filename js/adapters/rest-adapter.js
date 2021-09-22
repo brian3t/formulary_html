@@ -18,12 +18,14 @@ app.adapters.plan = (function () {
             return deferred.promise();
         },
 
-        findByName = function (searchKey) {
-            var deferred = $.Deferred();
-            var results = plans.filter(function (element) {
-                return element.name.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
-            });
-            deferred.resolve(results);
+        findByName = function (name) {
+            let deferred = $.Deferred();
+            let results = null;
+            $.when(getPlans({"name":name})).then(
+              function (result1) {
+                  results = result1;
+                  deferred.resolve(results);
+              });
             return deferred.promise();
         },
         findByState = function (state) {

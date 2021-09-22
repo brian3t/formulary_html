@@ -16,7 +16,9 @@ app.models.Drug = Backbone.Model.extend({
     {
         id: undefined,
         ndc: '',
-        proprietary_name: ''
+        proprietary_name: '',
+        active_numerator_strength: '',
+        active_ingred_unit: ''
     });
 
 app.models.DrugCollection = Backbone.Collection.extend({
@@ -28,7 +30,7 @@ app.models.DrugCollection = Backbone.Collection.extend({
             app.adapters.drug.findByName(options.data.name).done(function (data) {
                 //convert drug models from array form to object form
                 data.forEach((e, i)=>{
-                    let obj = {id: e[0], ndc: e[1], proprietary_name: e[2]}
+                    let obj = {id: e[0], ndc: e[1], proprietary_name: e[2],active_numerator_strength: e[3], active_ingred_unit: e[4]}
                     data[i] = obj
                 })
                 options.success(data);
