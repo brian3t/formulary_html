@@ -18,10 +18,10 @@ app.adapters.plan = (function () {
             return deferred.promise();
         },
 
-        findByName = function (name) {
+        findByContractName = function (contract_name) {
             let deferred = $.Deferred();
             let results = null;
-            $.when(getPlans({"name":name})).then(
+            $.when(getPlans({contract_name})).then(
               function (result1) {
                   results = result1;
                   deferred.resolve(results);
@@ -63,7 +63,7 @@ app.adapters.plan = (function () {
     // The public API
     return {
         findById: findById,
-        findByName: findByName,
+        findByContractName: findByContractName,
         findByState: findByState,
         findByNameState: findByNameState,
         findByFidState: findByFidState
@@ -107,10 +107,10 @@ app.adapters.formulary = (function () {
             deferred.resolve(formularys);
             return deferred.promise();
         },
-        findByFidDrugIdState = function(f_id, drug_id, state){
-            var deferred = $.Deferred();
-            var results = null;
-            $.when(getFormularys({"f_id": f_id, "drug_id": drug_id, "state": state})).then(
+        findByFidDrugId = function(formulary_id, drug_id){
+            let deferred = $.Deferred();
+            let results = null;
+            $.when(getFormularys({formulary_id, drug_id})).then(
                 function(xhrResult){
                     results = xhrResult;
                     deferred.resolve(results);
@@ -123,7 +123,7 @@ app.adapters.formulary = (function () {
     return {
         findById: findById,
         findByName: findByName,
-        findByFidDrugIdState: findByFidDrugIdState
+        findByFidDrugId: findByFidDrugId
     };
 
 }());

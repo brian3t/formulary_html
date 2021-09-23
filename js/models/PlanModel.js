@@ -18,7 +18,7 @@ app.models.PlanCollection = Backbone.Collection.extend({
 
   sync: function (method, model, options){
     if (method === "read") {
-      app.adapters.plan.findByName(options.data.name).done(function (data){
+      app.adapters.plan.findByContractName(options.data.contract_name).done(function (data){
         options.success(data);
       });
     }
