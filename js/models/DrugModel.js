@@ -4,10 +4,10 @@
  *
  */
 function convArrToObj(arr){
-  if (! arr.length || arr.length < 5) return {err: 'malformed_array'}
+  if (! arr.length || arr.length < 3) return {err: 'malformed_array'}
   return {
-    id: arr[0], ndc: arr[1], proprietary_name: arr[2], active_numerator_strength: arr[3], active_ingred_unit: arr[4],
-    full_name: arr[2] + ' ' + arr[3] + ' ' + arr[4]
+    rxcui: arr[0], id: arr[1], str: arr[2],
+    full_name: arr[2] + ' ' + arr[0]
   }
 }
 
@@ -28,10 +28,8 @@ app.models.Drug = Backbone.Model.extend({
   },
   {
     id: undefined,
-    ndc: '',
-    proprietary_name: '',
-    active_numerator_strength: '',
-    active_ingred_unit: ''
+    rxcui: '',
+    str: ''
   });
 
 app.models.DrugCollection = Backbone.Collection.extend({
