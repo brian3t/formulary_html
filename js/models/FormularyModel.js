@@ -5,7 +5,7 @@ app.models.Formulary = Backbone.Model.extend({
 
     sync: function (method, model, options) {
         if (method === "read") {
-            app.adapters.formulary.findByFidDrugId(this.get('formulary_id'), this.get('drug_id')).done(function (data) {
+            app.adapters.formulary.findByFidDrugId(this.get('f_id'), this.get('drug_id')).done(function (data) {
                 options.success(data);
             });
         }
