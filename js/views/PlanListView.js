@@ -21,7 +21,7 @@ app.views.PlanListView = Backbone.View.extend({
 app.views.PlanListItemView = Backbone.View.extend({
     tagName:"li",
     appendParamsToLi: function(){
-        //$("a", this.$el).attr("href",  "#formulary/4692/1838/nm");
+        //$("a", this.$el).attr("href",  "#formulary/4692/1838/");
         $("a", this.$el).removeClass("pull-right");
     },
     className: "table-view-cell",
@@ -32,13 +32,13 @@ app.views.PlanListItemView = Backbone.View.extend({
     },
 
     render:function () {
-        this.model.attributes["drug_id"] = app.views.PlanListItemView.drug_id;/*each plan list item displays selected drug. Drug_id stored by drugView (Backbone view acting as controller)*/
+        this.model.attributes["rxcui"] = app.views.PlanListItemView.rxcui;/*each plan list item displays selected drug. Drug_id stored by drugView (Backbone view acting as controller)*/
         this.$el.html(this.template(this.model.attributes));
         this.appendParamsToLi();
         return this;
     }
 },
     {
-        drug_id:"1" /*initial drug_id. Used to store selected drug_id from drug model*/
+        rxcui:"-1" /*initial rxcui. Used to store selected rxcui from drug model*/
     }
 );

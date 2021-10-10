@@ -3,7 +3,7 @@ app.routers.AppRouter = Backbone.Router.extend({
     routes: {
         "": "home",
         "drugs/:id": "drugDetails",
-        "formulary/:f_id/:drug_id": "formularyDetails"
+        "formulary/:f_id/:rxcui": "formularyDetails"
     },
 
     initialize: function () {
@@ -35,8 +35,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         });
     },
 
-    formularyDetails: function (f_id, drug_id, state) {
-        const formulary = new app.models.Formulary({f_id: f_id, drug_id: drug_id, state: state});
+    formularyDetails: function (f_id, rxcui, state) {
+        const formulary = new app.models.Formulary({f_id: f_id, rxcui: rxcui});
         formulary.fetch({
             success: function (returnedData) {
                 // Note that we could also 'recycle' the same instance of DrugFullView

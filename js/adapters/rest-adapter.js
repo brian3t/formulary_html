@@ -35,16 +35,6 @@ app.adapters.plan = (function (){
       deferred.resolve(plans);
       return deferred.promise();
     },
-    findByFidState = function (f_id, state){
-      var deferred = $.Deferred();
-      var result = null;
-      $.when(getPlans({"f_id": f_id, "state": state})).then(
-        function (result1){
-          result = result1;
-          deferred.resolve(result);
-        });
-      return deferred.promise();
-    },
     findByNameState = function (name, state){
       var deferred = $.Deferred();
       var results = null;
@@ -66,7 +56,6 @@ app.adapters.plan = (function (){
     findByContractName: findByContractName,
     findByState: findByState,
     findByNameState: findByNameState,
-    findByFidState: findByFidState
   };
 
 }());
@@ -100,10 +89,10 @@ app.adapters.formulary = (function (){
       deferred.resolve(results);
       return deferred.promise();
     },
-    findByFidDrugId = function (formulary_id, drug_id){
+    findByFidRxcui = function (formulary_id, rxcui){
       let deferred = $.Deferred();
       let results = null;
-      $.when(getFormularys({formulary_id, drug_id})).then(
+      $.when(getFormularys({formulary_id, rxcui})).then(
         function (xhrResult){
           results = xhrResult;
           deferred.resolve(results);
@@ -116,7 +105,7 @@ app.adapters.formulary = (function (){
   return {
     findById: findById,
     findByName: findByName,
-    findByFidDrugId: findByFidDrugId
+    findByFidRxcui: findByFidRxcui
   };
 
 }());

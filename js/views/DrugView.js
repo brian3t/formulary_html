@@ -2,7 +2,7 @@ app.views.DrugView = Backbone.View.extend({
     initialize: function () {
         this.searchResults = new app.models.PlanCollection();
         this.searchresultsView = new app.views.PlanListView({model: this.searchResults});
-        app.views.PlanListItemView.drug_id = this.model.attributes["id"];/*storing selected drug id*/
+        app.views.PlanListItemView.rxcui = this.model.attributes["rxcui"];/*storing selected rxcui*/
     },
     updateLocation: function(){
         $('#state', this.$el).val(capp.position.stateCode);
@@ -12,7 +12,7 @@ app.views.DrugView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(this.model.attributes));
         $('#plan-list', this.el).append(this.searchresultsView.render().el);
-        if (capp.position.stateCode=="")
+        if (capp.position.stateCode==="")
         {
             navigator.geolocation.getCurrentPosition(capp.onGeolocationSuccess, capp.onGeoLocationError);
         }
