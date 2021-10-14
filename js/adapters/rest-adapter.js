@@ -46,9 +46,6 @@ app.adapters.plan = (function (){
       return deferred.promise();
     },
 
-    //plans =
-    //    [{"id":"4272","f_id":"26","name":"Aetna 2-Tier Closed","state_code":"CA"},{"id":"4273","f_id":"2257","name":"Aetna 2-Tier Open","state_code":"CA"},{"id":"4274","f_id":"27","name":"Aetna 3-Tier","state_code":"CA"},{"id":"4275","f_id":"28","name":"Aetna 4-Tier","state_code":"CA"},{"id":"4276","f_id":"29","name":"Aetna 5-Tier","state_code":"CA"},{"id":"4277","f_id":"5042","name":"Aetna Dual Copay Open","state_code":"CA"},{"id":"4278","f_id":"2267","name":"Aetna Single-Tier Closed","state_code":"CA"},{"id":"4279","f_id":"2488","name":"AFSCME Council 31","state_code":"CA"},{"id":"4280","f_id":"41","name":"AFTRA","state_code":"CA"},{"id":"4281","f_id":"46","name":"AIDS Drug Assistance Program (CA)","state_code":"CA"},{"id":"4282","f_id":"95","name":"Alameda Alliance","state_code":"CA"},{"id":"4283","f_id":"519","name":"AmWINS Rx","state_code":"CA"},{"id":"4284","f_id":"201","name":"Anthem (BC California)","state_code":"CA"},{"id":"4285","f_id":"5046","name":"Anthem (BC California) 4 Tier","state_code":"CA"},{"id":"4286","f_id":"6218","name":"Anthem Covered California (2015)","state_code":"CA"},{"id":"4287","f_id":"5387","name":"Anthem Covered California Bronze","state_code":"CA"},{"id":"4288","f_id":"5389","name":"Anthem Covered California Gold","state_code":"CA"},{"id":"4289","f_id":"5390","name":"Anthem Covered California Platinum","state_code":"CA"},{"id":"4290","f_id":"5388","name":"Anthem Covered California Silver","state_code":"CA"},{"id":"4291","f_id":"202","name":"Anthem Medi-Cal (BC California)","state_code":"CA"}];
-
     plans = [];
   // The public API
   return {
