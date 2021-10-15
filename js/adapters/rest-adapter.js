@@ -28,6 +28,16 @@ app.adapters.plan = (function (){
         });
       return deferred.promise();
     },
+    findByContractNameRxcui = function (contract_name, rxcui){
+      let deferred = $.Deferred();
+      let results = null;
+      $.when(getPlans({contract_name, rxcui})).then(
+        function (result1){
+          results = result1;
+          deferred.resolve(results);
+        });
+      return deferred.promise();
+    },
     findByState = function (state){
       var deferred = $.Deferred();
       var plans = null;
@@ -51,6 +61,7 @@ app.adapters.plan = (function (){
   return {
     findById: findById,
     findByContractName: findByContractName,
+    findByContractNameRxcui: findByContractNameRxcui,
     findByState: findByState,
     findByNameState: findByNameState,
   };
@@ -61,7 +72,7 @@ app.adapters.formulary = (function (){
 
   var
     getFormularys = function (params){
-      return $.getJSON(config.restUrl + 'drugFormulary/get/' + app.utils.restful.assocArrayToRESTString(params), {});
+      return $.getJSON(config.restUrl + 'cmsForm/get/' + app.utils.restful.assocArrayToRESTString(params), {});
     },
     findById = function (id){
       var deferred = $.Deferred();

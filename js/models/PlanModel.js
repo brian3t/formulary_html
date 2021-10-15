@@ -18,9 +18,14 @@ app.models.PlanCollection = Backbone.Collection.extend({
 
   sync: function (method, model, options){
     if (method === "read") {
+      app.adapters.plan.findByContractNameRxcui(options.data.contract_name, options.data.rxcui).done(function (data){
+        options.success(data);
+      });
+/*
       app.adapters.plan.findByContractName(options.data.contract_name).done(function (data){
         options.success(data);
       });
+*/
     }
   }
 

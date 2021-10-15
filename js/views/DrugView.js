@@ -38,7 +38,7 @@ app.views.DrugView = Backbone.View.extend({
         }
 
         let key = $('.search-key').val();
-        this.searchResults.fetch({reset: true, data: {contract_name: key}});
+        this.searchResults.fetch({reset: true, data: {contract_name: key, rxcui: this.model.get('rxcui')}});
     },
 
     onkeypress: function (event) {

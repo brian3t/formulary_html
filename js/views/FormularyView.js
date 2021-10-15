@@ -13,7 +13,7 @@ app.views.FormularyView = Backbone.View.extend({
         //async update drug name and plan details
         var self = this;
         let drug = await app.adapters.drug.findById(this.model.get('drug_id'))
-        self.model.set('drug_name', drug.name);
+        self.model.set('drug_name', 'drug.name');
         var state = this.model.get("state");
         this.model.set({
             "state_name": app.utils.misc.USSTATES[state]
