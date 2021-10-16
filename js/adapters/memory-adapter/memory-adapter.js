@@ -16,6 +16,18 @@ app.adapters.drug = (function () {
             deferred.resolve(drug);
             return deferred.promise();
         },
+        findByRxcui = function (rxcui) {
+            let deferred = $.Deferred();
+            let drug = null;
+            for (let i = 0; i < drugs.length; i++) {
+                if (drugs[i][0] === rxcui) {
+                    drug = drugs[i];
+                    break;
+                }
+            }
+            deferred.resolve(drug);
+            return deferred.promise();
+        },
 
         findByName = function (searchKey) {
             var deferred = $.Deferred();
@@ -1590,9 +1602,10 @@ drugs = [
 
 
     return {
+        findByFirstalphabet: findByFirstalphabet,
         findById: findById,
         findByName: findByName,
-        findByFirstalphabet: findByFirstalphabet
+        findByRxcui: findByRxcui
     };
 
 }());

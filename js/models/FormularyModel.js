@@ -11,6 +11,8 @@ app.models.Formulary = Backbone.Model.extend({
         }
     },
     defaults:{
+        contract_name:"",
+        drug_full_name:"",
         plan_name:"",
         plan_url:"#"
     }

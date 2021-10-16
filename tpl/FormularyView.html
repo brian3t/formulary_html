@@ -209,7 +209,7 @@
 <div class='content text-center'>
     <div class="padding-row"></div>
     <div class="details">
-        <h4 id="drug-name"><%= drug_name %>
+        <h4 id="drug-name"><%= drug_full_name %>
             <span
                     class="pointer icon icon-edit"></span></h4>
 
@@ -219,7 +219,7 @@
             <div id="drug-list"></div>
         </div>
         <div id="current-plan">
-            <span id="plan-name"><%= plan_name %></span>
+            <span id="plan-name"><%= contract_name %> | <%= plan_name %></span>
             <span class="pointer icon icon-edit"></span>
             <% if (plan_url !== "") {%>
             <span href="<%= plan_url %>" onclick="app.utils.misc.applyInAppBrowser('<%= plan_url %>')"><span

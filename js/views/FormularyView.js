@@ -1,7 +1,6 @@
 app.views.FormularyView = Backbone.View.extend({
     initialize: async function () {
-        app.models.Drug.f_id = this.model.get('f_id');
-        app.models.Drug.state_code = this.model.get('state');
+        app.models.Drug.rxcui = this.model.get('rxcui');
         app.views.PlanListItemView.drug_id = this.model.get('drug_id');
 
         this.planSearchResults = new app.models.PlanCollection();
@@ -11,18 +10,14 @@ app.views.FormularyView = Backbone.View.extend({
         this.drugSearchresultsView = new app.views.DrugListGoToFormularyView({model: this.drugSearchResults});
 
         //async update drug name and plan details
-        var self = this;
-        let drug = await app.adapters.drug.findById(this.model.get('drug_id'))
-        self.model.set('drug_name', 'drug.name');
-        var state = this.model.get("state");
-        this.model.set({
-            "state_name": app.utils.misc.USSTATES[state]
-        });
+        const self = this;
+        let drug = await app.adapters.drug.findByRxcui(this.model.get('rxcui'))
+        this.listenTo(this.model, "add", this.modelUpdated);
+        this.listenTo(this.model, "change", this.modelUpdated);
+        self.model.set('drug_full_name', drug[2]);
         // $.when(app.adapters.plan.findByFidState(this.model.get('f_id'), state)).then(function (data) {
         //     self.model.set({plan_name: data.name, plan_url: data.origin_url});
         // });
-        this.listenTo(this.model, "add", this.modelUpdated);
-        this.listenTo(this.model, "change", this.modelUpdated);
     },
 
     render: function () {
