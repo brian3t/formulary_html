@@ -15,9 +15,8 @@ app.views.FormularyView = Backbone.View.extend({
         this.listenTo(this.model, "add", this.modelUpdated);
         this.listenTo(this.model, "change", this.modelUpdated);
         self.model.set('drug_full_name', drug[2]);
-        // $.when(app.adapters.plan.findByFidState(this.model.get('f_id'), state)).then(function (data) {
-        //     self.model.set({plan_name: data.name, plan_url: data.origin_url});
-        // });
+        const plan = await app.adapters.plan.findByFid(self.model.get('f_id'))
+        self.model.set({plan_name: plan.name, contract_name: plan.contract_name});
     },
 
     render: function () {

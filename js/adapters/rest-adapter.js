@@ -2,8 +2,21 @@ app.adapters.plan = (function (){
 
   var
     getPlans = function (params){
-      return $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString(params), {});
+      return $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString(params), {})
     },
+    findByFid = async function (f_id){
+      let plan = null;
+      const plans = await $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString({formulary_id: f_id}), {})
+      let l = plans.length;
+      for (let i = 0; i < l; i++) {
+        if (plans[i].f_id === f_id.toString()) {
+          plan = plans[i];
+          break;
+        }
+      }
+      return plan
+    },
+
     findById = function (id){
       var deferred = $.Deferred();
       var plan = null;
@@ -59,6 +72,7 @@ app.adapters.plan = (function (){
     plans = [];
   // The public API
   return {
+    findByFid: findByFid,
     findById: findById,
     findByContractName: findByContractName,
     findByContractNameRxcui: findByContractNameRxcui,
