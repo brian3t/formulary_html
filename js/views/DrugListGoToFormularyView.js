@@ -6,32 +6,29 @@ or even do away with anchor
 Therefore, this view expects model to have f_id and state_code
  */
 app.views.DrugListGoToFormularyView = Backbone.View.extend({
-
     tagName:'ul',
-
     className:'table-view',
-
-    initialize:function () {
-        var self = this;
+    f_id: null,//will be passed in during init
+    initialize:function (new_model) {
+        const self = this;
         this.model.on("reset", this.render, this);
         this.model.on("add", function (drug) {
-            self.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug}).render().el);
+            self.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug, f_id: self.f_id}).render().el);
         });
     },
 
     render:function () {
         this.$el.empty();
         _.each(this.model.models, function (drug) {
-            this.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug}).render().el);
+            this.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug, f_id: this.f_id}).render().el);
         }, this);
         return this;
     }
 });
 
 app.views.DrugListGoToFormularyItemView = Backbone.View.extend({
-
     tagName:"li",
-
+    f_id: null,
     className: "table-view-cell",
 
     initialize:function () {
@@ -40,7 +37,7 @@ app.views.DrugListGoToFormularyItemView = Backbone.View.extend({
     },
 
     render:function () {
-        this.$el.html(this.template($.extend(this.model.attributes,{f_id: this.model.collection.model.f_id, state_code: this.model.collection.model.state_code})));
+        this.$el.html(this.template($.extend(this.model.attributes,{})));
         return this;
     }
 });

@@ -5,15 +5,7 @@ app.adapters.plan = (function (){
       return $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString(params), {})
     },
     findByFid = async function (f_id){
-      let plan = null;
-      const plans = await $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString({formulary_id: f_id}), {})
-      let l = plans.length;
-      for (let i = 0; i < l; i++) {
-        if (plans[i].f_id === f_id.toString()) {
-          plan = plans[i];
-          break;
-        }
-      }
+      const plan = await $.getJSON(config.restUrl + 'plan/get/' + app.utils.restful.assocArrayToRESTString({formulary_id: f_id}), {})
       return plan
     },
 

@@ -7,7 +7,7 @@ app.views.FormularyView = Backbone.View.extend({
         this.planSearchresultsView = new app.views.PlanListView({model: this.planSearchResults});
 
         this.drugSearchResults = new app.models.DrugCollection();
-        this.drugSearchresultsView = new app.views.DrugListGoToFormularyView({model: this.drugSearchResults});
+        this.drugSearchresultsView = new app.views.DrugListGoToFormularyView({model: this.drugSearchResults, f_id: this.model.get('f_id')});
 
         //async update drug name and plan details
         const self = this;
@@ -16,7 +16,7 @@ app.views.FormularyView = Backbone.View.extend({
         this.listenTo(this.model, "change", this.modelUpdated);
         self.model.set('drug_full_name', drug[2]);
         const plan = await app.adapters.plan.findByFid(self.model.get('f_id'))
-        self.model.set({plan_name: plan.name, contract_name: plan.contract_name});
+        self.model.set({plan_name: plan?.plan_name, contract_name: plan?.contract_name});
     },
 
     render: function () {
