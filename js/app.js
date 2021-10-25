@@ -1,5 +1,5 @@
 var app = {views: {}, models: {}, routers: {}, utils: {}, adapters: {}};
-var config = {restUrl: "https://usvsolutions.com/formulary_api/f/"};
+var config = {restUrl: "https://formapi.usvsolutions.com/"};
 var IS_LOCAL = IS_LOCAL || false;
 
 if (IS_LOCAL){
