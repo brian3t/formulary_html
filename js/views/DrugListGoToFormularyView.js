@@ -13,7 +13,7 @@ app.views.DrugListGoToFormularyView = Backbone.View.extend({
         const self = this;
         this.model.on("reset", this.render, this);
         this.model.on("add", function (drug) {
-            self.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug, f_id: self.f_id}).render().el);
+            self.$el.append(new app.views.DrugListGoToFormularyItemView({model:drug, f_id: self.f_id || drug.get('id')}).render().el);
         });
     },
 

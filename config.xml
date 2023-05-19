@@ -4,8 +4,8 @@
     <description>
         The best app for medical formulary lookup.
     </description>
-    <author email="ceo@usvsolutions.com" href="https://formularymedical.com">
-        USVsolutions.com
+    <author email="ceo@socalappsolutions.com" href="https://formularymedical.com">
+        socalappsolutions.com
     </author>
     <content src="index.html" />
     <access origin="*" />

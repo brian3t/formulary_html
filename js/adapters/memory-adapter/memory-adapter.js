@@ -20,7 +20,7 @@ app.adapters.drug = (function () {
             let deferred = $.Deferred();
             let drug = null;
             for (let i = 0; i < drugs.length; i++) {
-                if (drugs[i][0] === rxcui) {
+                if (drugs[i][0] == rxcui) {
                     drug = drugs[i];
                     break;
                 }
