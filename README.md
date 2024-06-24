@@ -7,6 +7,8 @@ Serving thousands of medical practitioners in the U.S.
 
 Published at iTunes store: https://itunes.apple.com/us/app/formulary-medical/id949735021?mt=8
 
+### Install
+Copy js/local.example.js js/local.js
 
 To disable warning
 `This App Bundle contains Java/Kotlin code, which might be obfuscated. We recommend you upload a deobfuscation file to make your crashes and ANRs easier to analyze and debug.`
